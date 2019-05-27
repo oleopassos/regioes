@@ -3,20 +3,26 @@ package com.example.alu201621705.regioes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] regioes, norte, nordeste, centrooeste, sudeste, sul;
-    private int contadorRegioes = 0, contadorNorte = 0, contadorNordeste = 0, contadorCentrooeste = 0, contadorSudeste = 0, contadorSul = 0;
+    private String[] regioes, estados, norte, nordeste, centrooeste, sudeste, sul;
+    private int contadorRegioes = 0, contadorEstados = 0, contadorNorte = 0, contadorNordeste = 0, contadorCentrooeste = 0, contadorSudeste = 0, contadorSul = 0;
     private LinearLayout layout;
+    private TextView tvRegioes, tvEstados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tvRegioes.setText(regioes[contadorRegioes]);
+        tvEstados.setText(estados[contadorEstados]);
 
         layout.setOnTouchListener( new OnSwipeTouchListener(this){
+
+
 
             @Override
             public void onSwipeRight() {
@@ -31,14 +37,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeTop() {
                 super.onSwipeTop();
+
+                if (contadorRegioes < 4) {
+                    contadorRegioes++;
+                }else{
+                    contadorRegioes=0;
+                }
+
+                tvRegioes.setText(regioes[contadorRegioes]);
             }
 
-            @Override
+                @Override
             public void onSwipeBottom() {
                 super.onSwipeBottom();
+
+                    if (contadorRegioes > 0) {
+                        contadorRegioes--;
+                    }else{
+                        contadorRegioes=4;
+                    }
+
+                    tvRegioes.setText(regioes[contadorRegioes]);
+
             }
         });
-
 
 
         regioes = new String[] {
