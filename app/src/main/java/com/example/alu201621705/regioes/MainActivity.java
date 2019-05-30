@@ -8,7 +8,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private String[] regioes, estados, norte, nordeste, centrooeste, sudeste, sul;
-    private int contadorRegioes = 0, contadorEstados = 0, contadorNorte = 0, contadorNordeste = 0, contadorCentrooeste = 0, contadorSudeste = 0, contadorSul = 0;
+    private int limiteEstados = 0, contadorRegioes = 0, contadorEstados = 0;
     private LinearLayout layout;
     private TextView tvRegioes, tvEstados;
 
@@ -27,11 +27,70 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
+
+                if (contadorRegioes == 0){
+                    limiteEstados = 6; // Norte - 7 estados
+                }
+
+                if (contadorRegioes == 1){
+                    limiteEstados = 8; //Nordeste - 9 estados
+                }
+
+                if (contadorRegioes == 2){
+                    limiteEstados = 3; //Centro-Oeste - 4 estados
+                }
+
+                if (contadorRegioes == 3){
+                    limiteEstados = 3; //Sudeste - 4 estados
+                }
+
+                if (contadorRegioes == 4){
+                    limiteEstados = 2; //Sul - 3 estados
+                }
+
+                if (contadorEstados > 0){
+                    contadorEstados--;
+                }else{
+                    contadorEstados=limiteEstados;
+                }
+
+                tvEstados.setText(estados[contadorEstados]);
+
             }
+
 
             @Override
             public void onSwipeLeft() {
                 super.onSwipeLeft();
+
+                if (contadorRegioes == 0){
+                    limiteEstados = 6; // Norte - 7 estados
+                }
+
+                if (contadorRegioes == 1){
+                    limiteEstados = 8; //Nordeste - 9 estados
+                }
+
+                if (contadorRegioes == 2){
+                    limiteEstados = 3; //Centro-Oeste - 4 estados
+                }
+
+                if (contadorRegioes == 3){
+                    limiteEstados = 3; //Sudeste - 4 estados
+                }
+
+                if (contadorRegioes == 4){
+                    limiteEstados = 2; //Sul - 3 estados
+                }
+
+                if (contadorEstados < limiteEstados){
+                    contadorEstados++;
+                }else{
+                    contadorEstados=0;
+                }
+
+                tvEstados.setText(estados[contadorEstados]);
+
             }
 
             @Override
@@ -45,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 tvRegioes.setText(regioes[contadorRegioes]);
+                contadorEstados = 0;
+                tvEstados.setText(estados[contadorEstados]);
             }
 
                 @Override
@@ -58,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     tvRegioes.setText(regioes[contadorRegioes]);
-
+                    contadorEstados = 0;
+                    tvEstados.setText(estados[contadorEstados]);
             }
         });
 
