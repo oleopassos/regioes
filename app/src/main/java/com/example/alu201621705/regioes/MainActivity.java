@@ -17,12 +17,65 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        regioes = new String[] {
+                "Norte",
+                "Nordeste",
+                "Centro-Oeste",
+                "Sudeste",
+                "Sul"
+        };
+
+        norte = new String[]{
+                "Acre",
+                "Rondônia",
+                "Amazonas",
+                "Roraima",
+                "Pará",
+                "Amapá",
+                "Tocantins"
+        };
+
+        nordeste = new String[]{
+                "Bahia",
+                "Piauí",
+                "Maranhão",
+                "Ceará",
+                "Rio Grande do Norte",
+                "Paraíba",
+                "Pernambuco",
+                "Alagoas",
+                "Sergipe"
+        };
+
+        centrooeste = new String[]{
+                "Mato Grosso",
+                "Mato Grosso do Sul",
+                "Goiás",
+                "Distrito Federal"
+        };
+
+        sudeste = new String[]{
+                "São Paulo",
+                "Rio de Janeiro",
+                "Minas Gerais",
+                "Espirito Santo"
+        };
+
+        sul = new String[]{
+                "Rio Grande do Sul",
+                "Santa Catarina",
+                "Parana"
+        };
+
+        estados = norte;
+
+        tvRegioes = (TextView) findViewById(R.id.tvEstados);
+        tvEstados = (TextView) findViewById(R.id.tvRegioes);
+
         tvRegioes.setText(regioes[contadorRegioes]);
         tvEstados.setText(estados[contadorEstados]);
 
         layout.setOnTouchListener( new OnSwipeTouchListener(this){
-
-
 
             @Override
             public void onSwipeRight() {
@@ -105,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
                 tvRegioes.setText(regioes[contadorRegioes]);
                 contadorEstados = 0;
+                // TRAVEI estados =
                 tvEstados.setText(estados[contadorEstados]);
             }
 
@@ -125,55 +179,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        regioes = new String[] {
-                "Norte",
-                "Nordeste",
-                "Centro-Oeste",
-                "Sudeste",
-                "Sul"
-        };
 
-        norte = new String[]{
-                "Acre",
-                "Rondônia",
-                "Amazonas",
-                "Roraima",
-                "Pará",
-                "Amapá",
-                "Tocantins"
-        };
-
-        nordeste = new String[]{
-                "Bahia",
-                "Piauí",
-                "Maranhão",
-                "Ceará",
-                "Rio Grande do Norte",
-                "Paraíba",
-                "Pernambuco",
-                "Alagoas",
-                "Sergipe"
-        };
-
-        centrooeste = new String[]{
-                "Mato Grosso",
-                "Mato Grosso do Sul",
-                "Goiás",
-                "Distrito Federal"
-        };
-
-        sudeste = new String[]{
-                "São Paulo",
-                "Rio de Janeiro",
-                "Minas Gerais",
-                "Espirito Santo"
-        };
-
-        sul = new String[]{
-                "Rio Grande do Sul",
-                "Santa Catarina",
-                "Parana"
-        };
 
     }
 }
