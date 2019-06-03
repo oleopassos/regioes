@@ -83,22 +83,46 @@ public class MainActivity extends AppCompatActivity {
 
                 if (contadorRegioes == 0){
                     limiteEstados = 6; // Norte - 7 estados
+
+                    for (int i=0; i<7; i++){
+                        estados[i]=norte[i];
+                    }
                 }
 
                 if (contadorRegioes == 1){
                     limiteEstados = 8; //Nordeste - 9 estados
+
+                    for (int i=0; i<9; i++){
+                        estados[i]=nordeste[i];
+                    }
+
                 }
 
                 if (contadorRegioes == 2){
                     limiteEstados = 3; //Centro-Oeste - 4 estados
+
+                    for (int i=0; i<4; i++){
+                        estados[i]=centrooeste[i];
+                    }
+
                 }
 
                 if (contadorRegioes == 3){
                     limiteEstados = 3; //Sudeste - 4 estados
+
+                    for (int i=0; i<4; i++){
+                        estados[i]=sudeste[i];
+                    }
+
                 }
 
                 if (contadorRegioes == 4){
                     limiteEstados = 2; //Sul - 3 estados
+
+                    for (int i=0; i<3; i++){
+                        estados[i]=sul[i];
+                    }
+
                 }
 
                 if (contadorEstados > 0){
@@ -118,22 +142,46 @@ public class MainActivity extends AppCompatActivity {
 
                 if (contadorRegioes == 0){
                     limiteEstados = 6; // Norte - 7 estados
+
+                    for (int i=0; i<7; i++){
+                        estados[i]=norte[i];
+                    }
                 }
 
                 if (contadorRegioes == 1){
                     limiteEstados = 8; //Nordeste - 9 estados
+
+                    for (int i=0; i<9; i++){
+                        estados[i]=nordeste[i];
+                    }
+
                 }
 
                 if (contadorRegioes == 2){
                     limiteEstados = 3; //Centro-Oeste - 4 estados
+
+                    for (int i=0; i<4; i++){
+                        estados[i]=centrooeste[i];
+                    }
+
                 }
 
                 if (contadorRegioes == 3){
                     limiteEstados = 3; //Sudeste - 4 estados
+
+                    for (int i=0; i<4; i++){
+                        estados[i]=sudeste[i];
+                    }
+
                 }
 
                 if (contadorRegioes == 4){
                     limiteEstados = 2; //Sul - 3 estados
+
+                    for (int i=0; i<3; i++){
+                        estados[i]=sul[i];
+                    }
+
                 }
 
                 if (contadorEstados < limiteEstados){
